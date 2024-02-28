@@ -71,7 +71,7 @@ function displayForecast(forecastData) {
 
 // Function to save search history to localStorage
 function saveSearchHistory(city) {
-    var searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+    var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; // Initialize with an empty array if searchHistory is null
     searchHistory.unshift(city); // Add the new search to the beginning of the array
 
     if (searchHistory.length > 4) {
